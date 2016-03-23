@@ -1,0 +1,149 @@
+\fontfamily{ptm}\selectfont % not really; just don't look for EC fonts!
+\usepackage{texnansi}
+
+% hack for Babel compatibility
+\AtBeginDocument{%
+  \def\latinencoding{LY1}%
+  \DeclareRobustCommand{\latintext}{%
+    \fontencoding{LY1}\selectfont
+    \def\encodingdefault{LY1}}%
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% font families: replaces external fd files
+{\nfss@catcodes
+
+%%% CHARTER %%%%%%%%%%%%%%%%%%
+
+\DeclareFontFamily{LY1}{bch}{}
+
+\DeclareFontShape{LY1}{bch}{b}{n}{ <-> s * [0.95] bchb8y }{}
+\DeclareFontShape{LY1}{bch}{b}{it}{ <-> s * [0.95] bchbi8y }{}
+\DeclareFontShape{LY1}{bch}{b}{sc}{ <-> s * [0.95] bchbc8y }{}
+\DeclareFontShape{LY1}{bch}{m}{n}{ <-> s * [0.95] bchr8y }{}
+\DeclareFontShape{LY1}{bch}{m}{it}{ <-> s * [0.95] bchri8y }{}
+\DeclareFontShape{LY1}{bch}{m}{sc}{ <-> s * [0.95] bchrc8y }{}
+
+\DeclareFontShape{LY1}{bch}{b}{sl}{<->ssub * bch/b/it }{}
+\DeclareFontShape{LY1}{bch}{m}{sl}{<->ssub * bch/m/it }{}
+
+\DeclareFontShape{LY1}{bch}{bx}{n}{<->ssub * bch/b/n }{}
+\DeclareFontShape{LY1}{bch}{bx}{it}{<->ssub * bch/b/it }{}
+\DeclareFontShape{LY1}{bch}{bx}{sc}{<->ssub * bch/b/sc }{}
+\DeclareFontShape{LY1}{bch}{bx}{sl}{<->ssub * bch/b/sl }{}
+
+%%% LATIN MODERN SANS %%%%%%%%
+
+\DeclareFontFamily{LY1}{lmss}{}
+
+\DeclareFontShape{LY1}{lmss}{m}{n}
+     {<-8.5> texnansi-lmss8
+      <8.5-9.5> texnansi-lmss9      <9.5-11>  texnansi-lmss10
+      <11-15.5> texnansi-lmss12     <15.5-> texnansi-lmss17
+      }{}
+\DeclareFontShape{LY1}{lmss}{m}{sl}
+     {<-8.5> texnansi-lmsso8
+      <8.5-9.5> texnansi-lmsso9      <9.5-11>  texnansi-lmsso10
+      <11-15.5> texnansi-lmsso12     <15.5-> texnansi-lmsso17
+      }{}
+\DeclareFontShape{LY1}{lmss}{m}{it}
+      {<->ssub*lmss/m/sl}{}
+
+%%%%%%% Font/shape undefined, therefore substituted
+\DeclareFontShape{LY1}{lmss}{m}{sc}{<->sub*lmr/m/sc}{}
+
+%%%%%%%% semibold condensed series
+\DeclareFontShape{LY1}{lmss}{sbc}{n}{<-> texnansi-lmssdc10}{}
+\DeclareFontShape{LY1}{lmss}{sbc}{sl}{<-> texnansi-lmssdo10}{}
+\DeclareFontShape{LY1}{lmss}{sbc}{it}{<->ssub*lmss/sbc/sl}{}
+
+%%%%%%%%% bold extended series
+\DeclareFontShape{LY1}{lmss}{bx}{n}{<-> texnansi-lmssbx10}{}
+\DeclareFontShape{LY1}{lmss}{bx}{sl}{<-> texnansi-lmssbo10}{}
+\DeclareFontShape{LY1}{lmss}{bx}{it}{<->ssub*lmss/bx/sl}{}
+
+\DeclareFontShape{LY1}{lmss}{b}{n}{<->ssub*lmss/bx/n}{}
+\DeclareFontShape{LY1}{lmss}{b}{sl}{<->ssub*lmss/bx/sl}{}
+\DeclareFontShape{LY1}{lmss}{b}{it}{<->ssub*lmss/bx/sl}{}
+
+%%% LATIN MODERN MONO %%%%%%%%
+
+\DeclareFontFamily{LY1}{lmtt}{\hyphenchar \font\m@ne}
+\DeclareFontShape{LY1}{lmtt}{m}{n}{%
+   <-8.5> texnansi-lmtt8
+   <8.5-9.5> texnansi-lmtt9
+   <9.5-11>  texnansi-lmtt10
+   <11-> texnansi-lmtt12
+}{}
+\DeclareFontShape{LY1}{lmtt}{m}{it}
+{<-> texnansi-lmtti10}{}
+\DeclareFontShape{LY1}{lmtt}{m}{sl}
+{<-> texnansi-lmtto10}{}
+\DeclareFontShape{LY1}{lmtt}{m}{sc}
+{<-> texnansi-lmtcsc10}{}
+\DeclareFontShape{LY1}{lmtt}{bx}{n}
+  {<->sub*lmtt/m/n}{}
+\DeclareFontShape{LY1}{lmtt}{bx}{it}
+  {<->sub*lmtt/m/it}{}
+\DeclareFontShape{LY1}{lmtt}{bx}{sl}
+  {<->sub*lmtt/m/sl}{}
+
+%%% ACRONYM FONTS %%%%%%%%%%%%
+
+\DeclareFontFamily{LY1}{acrofont}{}
+\DeclareFontShape{LY1}{acrofont}{m}{n}{ <-> s * [0.87] texnansi-lmssq8}{}
+\DeclareFontShape{LY1}{acrofont}{m}{sl}{ <-> s * [0.87] texnansi-lmssqo8}{}
+\DeclareFontShape{LY1}{acrofont}{m}{it}{<->ssub*acrofont/m/sl}{}
+\DeclareFontShape{LY1}{acrofont}{bx}{n}{ <-> s * [0.87] texnansi-lmssqbx8}{}
+\DeclareFontShape{LY1}{acrofont}{bx}{sl}{ <-> s * [0.87] texnansi-lmssqbo8}{}
+\DeclareFontShape{LY1}{acrofont}{bx}{it}{<->ssub*acrofont/bx/sl}{}
+\DeclareFontShape{LY1}{acrofont}{b}{n}{<->ssub*acrofont/bx/n}{}
+\DeclareFontShape{LY1}{acrofont}{b}{sl}{<->ssub*acrofont/bx/sl}{}
+\DeclareFontShape{LY1}{acrofont}{b}{it}{<->ssub*acrofont/bx/sl}{}
+}
+
+% end of fd files
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\renewcommand{\familydefault}{bch}
+\renewcommand{\rmdefault}{bch}
+\fontfamily{bch}\selectfont
+\renewcommand{\sfdefault}{lmss}
+\renewcommand{\ttdefault}{lmtt}
+
+\pdfmapfile{=charter8y.map}
+\pdfmapfile{=lm.map}
+
+\usepackage{eulervm}
+
+\let\oiint\undefined
+\usepackage{wasysym}
+
+\realfontstrue
+
+\renewcommand{\bfdefault}{b}
+
+\usepackage[protrusion=compatibility,expansion=false]{microtype}
+
+\def\mapsbullet{\raisebox{.12ex}{\wasyfamily\char50}}
+
+\def\acron#1{{%
+    \ifx\f@family\rmsave
+      \fontfamily{acrofont}\selectfont
+    \else \ifx\f@shape\rmshpe
+      \fontshape{sl}\selectfont
+    \else
+      \fontshape{n}\selectfont \fi\fi #1}}
+
+%% visible space available in T1 encoding but not in LY1 encoding
+%\gdef\verbatim@font{%
+%  \normalfont\ttfamily\fontencoding{T1}\selectfont
+%  \hyphenchar\font\m@ne
+%  \let\do\do@noligs
+%  \verbatim@nolig@list}
+
+%% restore original definition of visiblespace
+%\DeclareTextCommandDefault{\textvisiblespace}{%
+%  \mbox{\kern.06em\vrule \@height.3ex}%
+%  \vbox{\hrule \@width.3em}%
+%  \hbox{\vrule \@height.3ex}}

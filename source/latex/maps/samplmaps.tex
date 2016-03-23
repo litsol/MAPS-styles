@@ -1,0 +1,268 @@
+\documentclass[
+% realfonts,	% if you own the official maps fonts
+% nosubsub,	% if you need at most two levels of sectioning
+% onecolumn,	% for symmetric single-column layout
+% asym,		% for asymmetric single-column layout
+]{maps}
+
+% load packages. Please check whether you really need them.
+\usepackage{natbib}
+
+\renewcommand{\notesname}{Footnotes}
+
+\setupArticle{      % Use {} if argument contains comma's!
+% titel
+          Title = {An example document for the Maps classfile, demonstrating its
+                   various features\thanks{We thank the \TeX{} Live people for
+                   providing us with a rich ready-to-run \TeX{} environment.}
+                  },
+   RunningTitle = An example document,
+       SubTitle = with an optional subtitle,
+% auteur
+         Author = Anton Ulrich Thor,
+          Email = a.u.thor@uu.am.dw,
+        Address = Institute of Indefinite Studies\\
+                  Unseen University\\
+                  Ankh Morpork,
+% tijdstip
+         Period = voorjaar,
+         Number = 36,
+           Year = 2008,
+           Page = 2,
+% Intro
+       Keywords = {Maps, classfile, sample},
+       Language = english,
+       Abstract = {This is a sample input file for the Maps classfile,
+                   which is based on the article classfile.
+                   It demonstrates various standard and non-standard features.
+                   \\
+                   Use of the abstract- and keywords environments is highly appreciated.
+                  }  
+}
+
+\begin{document}
+\maketitle
+\section{Ordinary Text}
+
+The ends  of words and sentences are marked
+  by   spaces. It  doesn't matter how many
+spaces    you type; one is as good as 100.  The
+end of   a line counts as a space.
+
+One   or more   blank lines denote the  end
+of  a paragraph.
+
+Footnotes\footnote{This is an example of a footnote.}  are converted
+to endnotes\footnote{This is another one, with more text to it, to
+see how it will wrap to the next line.}. You will need a
+\verb+\theendnotes+ command to get them actually typeset. The title
+of the notes section is defined by the command \verb+\notesname+.
+
+\section{Sectioning}
+
+The maps style defaults to unnumbered sections. If you really must,
+you can restore section numbering with \emph{e.g.}
+\begin{verbatim}
+\setcounter{secnumdepth}{1}
+\end{verbatim}
+or higher numbers for more levels of numbering.
+
+\subsection{Subsection}
+This is a second-level section header. You can go down one more
+level:
+
+\subsubsection{A subsubsection}
+
+This is a run-in header. The dot at the end of the section title is
+added by the classfile.
+
+\subsubsection{Tip}
+If you only need one or two levels of header, then you can get a
+better layout with the \texttt{nosubsub} document option.
+The Maps editors may decide to turn on this option for you.
+
+\section{Lists}
+
+Another frequently-displayed structure is a list.
+The following is an example of an \emph{itemized}
+list.
+\begin{itemize}
+  \item This is the first item of an itemized list.
+    Each item in the list is marked with a ``tick''.
+  \item This is the second item of the list.  It
+    contains another list nested inside it.  The inner
+    list is an \emph{enumerated} list.
+    \begin{enumerate}
+      \item This is the first item of an enumerated
+        list that is nested within the itemized list.
+
+      \item This is the second item of the inner list.
+        \LaTeX\ allows you to nest lists deeper than
+          you really should.
+    \end{enumerate}
+    This is the rest of the second item of the outer
+    list.  It is no more interesting than any other
+    part of the item.
+  \item This is the third item of the list.
+\end{itemize}
+In a two-column layout, protracted indenting doesn't look very
+good. Therefore, the Maps classfile provides \texttt{itemouter}- and
+\texttt{enumouter} environments:
+\begin{itemouter}
+\item This is the first item of a non-indented itemized list,
+  produced with the \texttt{itemouter} environment.
+\item This is the second item.
+\end{itemouter}
+Now an enumerated version:
+\begin{enumouter}
+\item This is the first item of a non-indented enumerated list,
+  produced with the \texttt{enumouter} environment.
+\item This is the second item.
+\end{enumouter}
+And a version for descriptions:
+\begin{descript}
+\item[cow] A milk-producing animal that grazes grass and has
+multiple stomachs
+\item[kangoroo] An Australian hopping animal
+\end{descript}
+
+\section{Tabulars}
+
+The Maps classfile adds some vertical space around horizontal rules
+in tables. This makes vertical rules look funny, but most of the
+time you are better off without vertical rules anyway; see table
+\ref{tabulars}. If you really insist on vertical rules, use the
+\texttt{deftables} document option.
+
+\begin{table}[ht]
+
+\begin{tabular}{|l|l|}
+\hline
+var & value\\
+\hline
+$Q_{s,\max}$ & 0.18\\
+$K_{s}$      & 1.0\\
+$Y_{x/s}$    & 0.5\\
+$Y_{p/s}$    & 0.854\\
+$Q_{p,\max}$ & 0.0045\\
+$\mu_{\rm crit}$  & 0.01\\
+$k_{h}$       & 0.002\\
+$m_{s}$       & 0.025\\
+\hline
+\end{tabular}\hspace{2pc}
+\begin{tabular}{@{}ll@{}}
+\hline
+var & value\\
+\hline
+$Q_{s,\max}$   & 0.18\\
+$K_{s}$        & 1.0\\
+$Y_{x/s}$      & 0.5\\
+$Y_{p/s}$      & 0.854\\
+$Q_{p,\max}$   & 0.0045\\
+$\mu_{\rm crit}$ & 0.01\\
+$k_{h}$        & 0.002\\
+$m_{s}$        & 0.025\\
+\hline
+\end{tabular}
+\caption{Tabulars with and without vertical rules}\label{tabulars}
+\end{table}
+
+\section{Wide typesetting in single-column layout}
+
+For both single-column layouts, there are environments \texttt{fullwidth} and
+\texttt{verboutdent} which typeset their content across the full page,
+including most of the wide margin.
+
+\begin{fullwidth}
+x x x x x x x x x x x x x x x x x x x x x
+x x x x x x x x x x x x x x x x x x x x x
+x x x x x x x x x x x x x x x x x x x x x
+x x x x x x x x x x x x x x x x x x x x x
+\end{fullwidth}
+
+\begin{verboutdent}
+{}\/$xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+\end{verboutdent}
+The implementation of \texttt{fullwidth} is rather simplistic and
+may easily break, in which case more sophisticated hackery will be
+needed.
+
+\section{Fonts}
+
+At production time, Computer Modern will be replaced with Bitstream
+Charter, scaled to 95\%, and Latin Modern. For math, the eulervm
+package will be used. You can safely ignore warnings about size
+substitutions.
+
+\section{Assembling your submission}
+
+Please check whether all non-standard stylefiles and packages and all
+non-standard fonts are included. We do have a current \TeX{} Live but,
+although we do have access to CTAN, finding the right package by
+name can occasionally be a challenge.
+
+Avoid jpeg compression for screenshots. Conversion to pdf may
+sometimes result in jpeg compression as well. Use \emph{e.g.} png
+format instead.
+
+Finally, a pdf of your article is appreciated. This way, we can
+check more reliably whether your article compiles
+correctly on our own systems.
+
+\section{References}
+
+If you have references, use whatever suits you. A few sample references:
+see \cite{knuth}, or \cite{lamport}.
+
+\theendnotes
+
+\bibliographystyle{apalike}
+\bibliography{maps}
+
+%\begin{thebibliography}{}
+%
+%\bibitem[Knuth, 1986]{knuth}
+%Knuth, D.~E. (1986).
+%\newblock {\em The {\TeX{}}book}.
+%\newblock Addison-Wesley Publishing Company.
+%
+%\bibitem[Kroonenberg, 2004]{mapsclass}
+%Kroonenberg, S. (2004).
+%\newblock The maps style.
+%\newblock {\em Maps}, 30.
+%
+%\bibitem[Lamport, 1994]{lamport}
+%Lamport, L. (1994).
+%\newblock {\em {\LaTeX} a Document Preparation System}.
+%\newblock Addison-Wesley Publishing Company, 2nd edition.
+%
+%\end{thebibliography}
+
+\end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% the bibtex file:
+
+@BOOK{knuth,
+author = "Donald E. Knuth",
+title = "The {\TeX{}}book",
+publisher = "Addison-Wesley Publishing Company",
+year = 1986,
+}
+
+@BOOK{lamport,
+author = "Leslie Lamport",
+title = "{\LaTeX} a Document Preparation System",
+publisher = "Addison-Wesley Publishing Company",
+edition = "2nd",
+year = 1994,
+}
+
+@ARTICLE{mapsclass,
+author = "Siep Kroonenberg",
+title = "The Maps style",
+journal = "Maps",
+volume = "30",
+year = "2004"
+}
+% $Id$

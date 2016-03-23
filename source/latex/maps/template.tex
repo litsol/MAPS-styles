@@ -1,0 +1,33 @@
+\documentclass[
+  realfonts,
+]{maps}
+\setupArticle{      % Use {} if argument contains comma's!
+% titel
+          Title = , % (required) Full title
+   RunningTitle = , % (optional) Shortened title for running heads; remove if == Title
+       SubTitle = , % (optional) subtitle, slanted sans serif under Title
+% auteur
+         Author = , % (required) authors, separated with \\
+  RunningAuthor = , % (optional) auteurs, gescheiden door komma, voor running heads; remove if == Title
+          Email = , % (optional) email address 
+        Address = , % (optional) address, lines separated by \\
+% tijdstip
+         Period = , % (optional) `voorjaar' or `najaar'
+         Number = , % (optional) maps number (36, 37, 38, ...)
+           Year = , % (optional) year (2008, 2009, 2010, ...)
+           Page = , % (optional) starting page of this article in the MAPS
+% Intro
+       Keywords = , % (optional) keywords, comma-separated
+       Language = , % (optional) english (the default) or dutch
+       Abstract = { % (optional) Abstract
+                  }  
+}
+
+\begin{document}
+\maketitle
+\section{Introduction}
+...
+\section{Conclusion}
+...
+\end{document}
+$Id$
